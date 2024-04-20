@@ -1,0 +1,207 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #201b2c; /* Definindo uma cor de fundo global para a página */
+}
+
+.main-form {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center > h1 {
+    color: #77ffc0;
+    text-align: center; /* Certifique-se de que o título está centralizado */
+    font-size: 30pt;
+}
+
+.card-login {
+    width: 40vw;
+    min-height: 100vh;  /* Altura mínima com flexibilidade para expandir */
+    max-height: 90vh;/* Limita o tamanho máximo do card */ /* Altura automática baseada no conteúdo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 50px;
+    background-color: #2f2841;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+    margin: 20px;
+    overflow: hidden;
+}
+
+.textfield {
+    width: 100%;
+    font-size: 14pt;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px;
+}
+
+.textfield > label {
+    color: #f0ffffde;
+    margin-bottom: 13px; /* Espaçamento menor entre o label e o input/select */
+}
+
+.textfield > input, .textfield > select {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #514869;
+    color: #f0ffffde;
+    font-size: 18pt; /* Tamanho da fonte uniforme para melhor leitura */
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.textfield > input::placeholder, .textfield > select::placeholder {
+    color: #f0ffff94;
+}
+
+.submitarq,
+button[type="submitarq"] {
+    width: 10%;
+    padding: 10px 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    /* Adiciona espaço abaixo do botão */
+    border: none;
+    border-radius: 8px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #2b134b;
+    background-color: #00ff88;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px -12px #00ff8052;
+    text-transform: uppercase;
+    align-self: center;
+    /* Garante centralização horizontal */
+}
+
+/* Adicionando hover effects para o botão para feedback visual ao usuário */
+button[type="submitarq"]:hover {
+    background-color: #00e677;
+}
+
+.submit,
+button[type="submit"] {
+    width: 60%;
+    padding: 16px 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    /* Adiciona espaço abaixo do botão */
+    border: none;
+    border-radius: 8px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #2b134b;
+    background-color: #00ff88;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px -12px #00ff8052;
+    text-transform: uppercase;
+    align-self: center;
+    /* Garante centralização horizontal */
+}
+
+/* Adicionando hover effects para o botão para feedback visual ao usuário */
+button[type="submit"]:hover {
+    background-color: #00e677;
+}
+
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    /* Mudança para layout de coluna */
+    align-items: center;
+    /* Centraliza horizontalmente */
+    justify-content: flex-start;
+    /* Inicia o conteúdo do topo */
+    background-color: #201b2c;
+    /* Cor de fundo global */
+    font-family: 'Noto Sans', sans-serif;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    /* Ocupa 100% da largura da tela */
+    
+    /* Fundo escuro para melhor visibilidade do texto */
+    color: white;
+    text-align: center;
+    /* Centraliza o texto no meio */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    /* Distribui espaço entre logo e texto */
+    align-items: center;
+    padding: 10px 20px;
+}
+
+
+.footer-logo {
+    width: 80px;
+    /* Define a largura da logo */
+    height: auto;
+    /* Mantém a proporção da altura conforme a largura */
+    position: absolute;
+    /* Posiciona a logo de forma absoluta dentro do footer */
+    right: 10px;
+    /* Posiciona a logo no canto direito do footer */
+}
+
+footer p {
+    flex: 1;
+    /* Permite que o texto ocupe o espaço restante para centralização */
+    margin: 0;
+    /* Remove qualquer margem padrão */
+}
+
+small {
+    color: white;
+    /* Define a cor do texto como branco */
+    font-size: 0.8em;
+    /* Opcional: ajusta o tamanho da fonte se necessário */
+    display: block;
+    /* Opcional: faz com que ocupe a própria linha */
+    margin-top: 5px;
+    /* Opcional: adiciona espaço no topo para separar do elemento acima */
+}
+
+
+
+@media only screen and (max-width:950px) {
+    .card-login {
+        width: 85%
+    }
+
+}
+
+@media only screen and (max-width:950px) {
+    .card-login {
+        width: 85%
+    }
+}

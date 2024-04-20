@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Solicitações de Aviso Prévio de Férias</title>
+</head>
+<body>
+        <header class="center">
+            <h1>Solicitação Aviso Prévio de Férias</h1>
+        </header>
+        <div class="main-form"></div>
+            <form action="formulario.php" method="post" class="card-login">
+                <div class="textfield">
+                    <label for="Selecione a Empresa">1. Selecione a Empresa:</label>
+                    <select name="Selecione a Empresa" id="Selecione a Empresa" required>
+                        <option value="AUTOMAKERS">AUTOMAKERS</option>
+                        <option value="CARS2YOU">CARS2YOU</option>
+                        <option value="DEALERS CLUB">DEALERS CLUB</option>
+                        <option value="HUBSGA MATRIZ">HUBSGA MATRIZ</option>
+                        <option value="MAIS QUE CLIENTE">MAIS QUE CLIENTE</option>
+                        <option value="WIN LEILOES - MATRIZ">WIN LEILOES - MATRIZ</option>
+                    </select>
+                </div>
+                <div class="textfield">
+                    <label for="Email Gestor">2. Email Gestor:</label>
+                    <select name="email" id="Email Gestor" required>
+                        <option value="" disabled selected>Selecione o email gestor</option>
+                        <option value="felipe.alexandrino@treo.com.br">felipe.alexandrino@treo.com.br</option>
+                        <option value="renan.medeiros@treo.com.br">renan.medeiros@treo.com.br</option>
+                        <option value="sistemas@treo.com.br">sistemas@treo.com.br</option>
+                    </select>
+                </div>
+                <div class="textfield">
+                    <label for="Empregado">3. Empregado:</label>
+                    <select name="Empregado" id="Empregado" required>
+                        <option value="" disabled selected>Selecione um empregado</option>
+                        <option value="FELIPE ALEXANDRINO">FELIPE ALEXANDRINO</option>
+                        <option value="RENAN MEDEIROS">RENAN MEDEIROS</option>
+                    </select>
+                </div>
+                <div class="textfield">
+                    <label for="Data de inicio do gozo">4. Data de início do gozo:</label>
+                    <input type="date" name="Data de início do gozo" id="Data de início do gozo" required>
+                </div>
+                <div class="textfield">
+                    <label for="Dias de gozo">5. Dias de gozo:</label>
+                    <input type="text" name="Dias de gozo" id="Dias de gozo" required>
+                </div>
+                <div class="textfield">
+                    <label for="Dias de abono opcional">6. Dias de abono - opcional:</label>
+                    <input type="text" name="Dias de abono opcional" id="Dias de abono opcional">
+                </div>
+                <div class="textfield">
+                    <label for="Data do aviso opcional">7. Data do aviso opcional:</label>
+                    <input type="date" name="Data do aviso opcional" id="Data do aviso opcional">
+                </div>
+                <div class="textfield">
+                    <label for="Data do pagamento opcional">8. Data do pagamento opcional:</label>
+                    <input type="date" name="Data do pagamento opcional" id="Data do pagamento opcional">
+                </div>
+                <div class="textfield">
+                    <label for="Assunto">9. Assunto:</label>
+                    <input type="text" name="Assunto" id="Assunto" required>
+                </div>
+                <div class="textfield">
+                    <label for="mensagem">10. Descrição:</label>
+                    <textarea name="mensagem" id="mensagem" cols="50" rows="10" required></textarea>
+                </div>
+                <div class="textfield">
+                    <label for="Expectativa de Conclusão opcional">11. Expectativa de Conclusão opcional:</label>
+                    <input type="date" name="Expectativa de Conclusão  opcional" id="Expectativa de Conclusão  opcional" required>
+                </div>
+                <div class="textfield">
+                    <label for="Anexar Documento">12. Anexar Documento:</label>
+                    <input type="file" name="Anexar Documento" id="Anexar Documento" accept=".pdf, .xls, .xlsx" required>
+                    <small>Tipos de arquivos aceitos: PDF, Excel (.xls, .xlsx).</small>
+                    <button type="submitarq" class="submit">Enviar Arquivos</button>
+                </div>
+                    <button type="submit" name="submit-form" class="submit">Enviar Formulário</button>
+                </div>
+            </form>
+        </div>
+        <footer>
+            <div class="footer-content">
+            <img src="Logo_Treo_Moletom.png" alt="Logo da Empresa" class="footer-logo">
+            
+            </div>
+        </footer>
+</body>
+</html>
