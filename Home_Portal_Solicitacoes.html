@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style_home.css" />
+    <title>Treo Tecnologia</title>
+</head>
+
+<body>
+    <div class="main-login">
+        <div class="left-login">
+            <img src="Logo_Treo_Moletom.png" class="left-login-image" alt="image">
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <h1>Solicitações</h1>
+                <div class="textfield">
+                    <label for="Selecione a Empresa">Selecione a Solicitação:</label>
+                    <select name="Selecione a Empresa" id="selecaoSolicitacao" required>
+                        <option value="" disabled selected></option>
+                        <option value="http://127.0.0.1:5501/formulario_aviso_previo_ferias.html">Solicitação Aviso Prévio de Férias</option>
+                        <option value="http://127.0.0.1:5501/formulario_calculo_ferias.html">Solicitação Cálculo de Férias</option>
+                    </select>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('selecaoSolicitacao').addEventListener('change', function () {
+                var url = this.value; // A URL será o valor selecionado, ajuste conforme a necessidade
+                if (url) { // Se há uma URL (ou seja, valor não vazio)
+                    window.location = url; // Redireciona para a URL
+                }
+            });
+    </script>
+</body>
+</html>
