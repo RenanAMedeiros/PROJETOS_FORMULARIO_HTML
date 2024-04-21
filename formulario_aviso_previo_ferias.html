@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,21 +8,22 @@
     <title>Solicitações de Aviso Prévio de Férias</title>
 </head>
 <body>
-        <header class="center">
-            <h1>Solicitação Aviso Prévio de Férias</h1>
-        </header>
-        <div class="main-form"></div>
-            <form action="formulario.php" method="post" class="card-login">
-                <div class="textfield">
-                    <label for="Selecione a Empresa">1. Selecione a Empresa:</label>
-                    <select name="Selecione a Empresa" id="Selecione a Empresa" required>
-                        <option value="AUTOMAKERS">AUTOMAKERS</option>
-                        <option value="CARS2YOU">CARS2YOU</option>
-                        <option value="DEALERS CLUB">DEALERS CLUB</option>
-                        <option value="HUBSGA MATRIZ">HUBSGA MATRIZ</option>
-                        <option value="MAIS QUE CLIENTE">MAIS QUE CLIENTE</option>
-                        <option value="WIN LEILOES - MATRIZ">WIN LEILOES - MATRIZ</option>
-                    </select>
+    <div class="center">
+        <h5>Solicitação Aviso Prévio de Férias</h5>
+    </div>
+    <div class="main-form"> <!-- Início do div main-form -->
+        <form action="formulario.php" method="post" class="card-login">
+            <!-- Campos do formulário aqui -->
+            <div class="textfield">
+                <label for="Selecione a Empresa">1. Selecione a Empresa:</label>
+                <select name="Selecione a Empresa" id="Selecione a Empresa" required>
+                    <option value="AUTOMAKERS">AUTOMAKERS</option>
+                    <option value="CARS2YOU">CARS2YOU</option>
+                    <option value="DEALERS CLUB">DEALERS CLUB</option>
+                    <option value="HUBSGA MATRIZ">HUBSGA MATRIZ</option>
+                    <option value="MAIS QUE CLIENTE">MAIS QUE CLIENTE</option>
+                    <option value="WIN LEILOES - MATRIZ">WIN LEILOES - MATRIZ</option>
+                </select>
                 </div>
                 <div class="textfield">
                     <label for="Email Gestor">2. Email Gestor:</label>
@@ -78,17 +78,18 @@
                     <label for="Anexar Documento">12. Anexar Documento:</label>
                     <input type="file" name="Anexar Documento" id="Anexar Documento" accept=".pdf, .xls, .xlsx" required>
                     <small>Tipos de arquivos aceitos: PDF, Excel (.xls, .xlsx).</small>
+                </div>
+                <div class="textfield">
                     <button type="submitarq" class="submit">Enviar Arquivos</button>
                 </div>
-                    <button type="submit" name="submit-form" class="submit">Enviar Formulário</button>
-                </div>
-            </form>
-        </div>
-        <footer>
-            <div class="footer-content">
+                <div class="textfield">
+                    <button type="submit" name="submit-form" class="submit">Enviar Formulário</button>    
+        </form>
+    </div> <!-- Fim do div main-form -->
+    <footer>
+        <div class="footer-content">
             <img src="Logo_Treo_Moletom.png" alt="Logo da Empresa" class="footer-logo">
-            
-            </div>
-        </footer>
+        </div>
+    </footer>
 </body>
 </html>

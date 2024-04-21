@@ -1,42 +1,48 @@
 
-
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Noto Sans', sans-serif;
-    background-color: #201b2c; /* Definindo uma cor de fundo global para a página */
-}
+body, html {
+    height: 100%;
+    /* Mantém a altura total */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Inicia o conteúdo no topo */
+    align-items: center;
+    /* Centraliza horizontalmente */
+    background-color: #201b2c;
+        /* Definindo uma cor de fundo global para a página */
+    }
+
 
 .main-form {
     width: 100vw;
-    height: 100vh;
+    flex-grow: 1;
+    /* Permite que cresça para ocupar espaço disponível, mas não todo */
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    }
 
-.center > h1 {
+
+.center > h5 {
     color: #77ffc0;
     text-align: center; /* Certifique-se de que o título está centralizado */
-    font-size: 30pt;
+    font-size: 20pt;
+    display: block;
 }
 
 .card-login {
-    width: 40vw;
+    width: 40%;
     min-height: 100vh;  /* Altura mínima com flexibilidade para expandir */
-    max-height: 90vh;/* Limita o tamanho máximo do card */ /* Altura automática baseada no conteúdo */
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     padding: 50px;
     background-color: #2f2841;
     border-radius: 20px;
     box-shadow: 0px 10px 40px #00000056;
     margin: 20px;
-    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .textfield {
@@ -54,33 +60,34 @@ body {
     margin-bottom: 13px; /* Espaçamento menor entre o label e o input/select */
 }
 
-.textfield > input, .textfield > select {
+.textfield > input, .textfield > select, .textfield > textarea{
     width: 100%;
     border: none;
     border-radius: 10px;
     padding: 10px;
     background-color: #514869;
     color: #f0ffffde;
-    font-size: 18pt; /* Tamanho da fonte uniforme para melhor leitura */
+    font-size: 12pt; /* Tamanho da fonte uniforme para melhor leitura */
     box-shadow: 0px 10px 40px #00000056;
     outline: none;
     box-sizing: border-box;
 }
 
-.textfield > input::placeholder, .textfield > select::placeholder {
+.textfield > input::placeholder, .textfield > select::placeholder, .textfield > textarea::placeholder {
     color: #f0ffff94;
 }
 
 .submitarq,
 button[type="submitarq"] {
-    width: 10%;
+    width: 15%;
     padding: 10px 0;
     margin-top: 10px;
     margin-bottom: 20px;
     /* Adiciona espaço abaixo do botão */
     border: none;
+    font-size: 7pt; /* Tamanho da fonte uniforme para melhor leitura */
     border-radius: 8px;
-    font-weight: 800;
+    font-weight: 00;
     letter-spacing: 2px;
     color: #2b134b;
     background-color: #00ff88;
@@ -122,23 +129,6 @@ button[type="submit"]:hover {
 }
 
 
-body,
-html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    /* Mudança para layout de coluna */
-    align-items: center;
-    /* Centraliza horizontalmente */
-    justify-content: flex-start;
-    /* Inicia o conteúdo do topo */
-    background-color: #201b2c;
-    /* Cor de fundo global */
-    font-family: 'Noto Sans', sans-serif;
-}
-
 footer {
     position: fixed;
     left: 0;
@@ -161,9 +151,8 @@ footer {
     padding: 10px 20px;
 }
 
-
 .footer-logo {
-    width: 80px;
+    width: 50px;
     /* Define a largura da logo */
     height: auto;
     /* Mantém a proporção da altura conforme a largura */
@@ -171,13 +160,8 @@ footer {
     /* Posiciona a logo de forma absoluta dentro do footer */
     right: 10px;
     /* Posiciona a logo no canto direito do footer */
-}
-
-footer p {
-    flex: 1;
-    /* Permite que o texto ocupe o espaço restante para centralização */
-    margin: 0;
-    /* Remove qualquer margem padrão */
+    transform: translateY(-45%);
+        /* Ajusta a posição para centralizar exatamente no meio */
 }
 
 small {
@@ -193,15 +177,17 @@ small {
 
 
 
-@media only screen and (max-width:950px) {
+@media only screen and (max-width:950px), (max-width: 600px) {
     .card-login {
-        width: 85%
+        width: 85%;
+        min-width: 300px;
     }
 
 }
 
-@media only screen and (max-width:950px) {
+@media only screen and (max-height: 400px) {
     .card-login {
-        width: 85%
+        min-height: 300px;
+        /* Ajuste para dispositivos com altura extremamente limitada */
     }
 }
