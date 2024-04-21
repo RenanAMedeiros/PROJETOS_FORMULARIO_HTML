@@ -54,11 +54,14 @@ body, html {
     align-items: flex-start;
     justify-content: center;
     margin: 10px;
+    gap: 10px;
+        /* Espaçamento entre cada item dentro do textfield */
 }
 
 .textfield > label {
     color: #f0ffffde;
     margin-bottom: 13px; /* Espaçamento menor entre o label e o input/select */
+
 }
 
 .textfield > input, .textfield > select, .textfield > textarea{
@@ -193,3 +196,4 @@ small {
         /* Ajuste para dispositivos com altura extremamente limitada */
     }
 }
+
