@@ -1,51 +1,65 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
-body, html {
-    height: 100%;
-    /* Mantém a altura total */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    /* Inicia o conteúdo no topo */
-    align-items: center;
-    /* Centraliza horizontalmente */
-    background-color: #201b2c;
-        /* Definindo uma cor de fundo global para a página */
-    padding-bottom: 60px; /* Ajuste conforme a altura do seu rodapé */
-    }
-
-.header {
-    align-items: center;
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 20px;
-    height: 80px;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    /* Remove a margem padrão do corpo para que o header ocupe toda a largura */
     background-color: #2f2841;
-    box-shadow: 0px 10px 40px #00000056;
+}
 
+.header-content {
+    display: flex;
+    /* Utiliza flexbox para alinhar itens na mesma linha */
+    align-items: center;
+    /* Centraliza verticalmente os itens dentro do container */
+    justify-content: space-between;
+    /* Distribui espaço entre o logo e a navegação */
+}
+
+header {
+    background-color: #2f2841;
+    padding: 10px 20px;
+    box-shadow: 0px 10px 40px #00000056;
+}
+
+nav {
+    display: flex;
+    /* Alinha os elementos de navegação horizontalmente */
 }
 
 .navbar {
+    list-style-type: none;
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 20px;
+    /* Alinha os itens da lista horizontalmente */
     align-items: center;
+    /* Centraliza os itens verticalmente */
+    padding: 0;
+    margin: 0;
 }
 
-.navbar > li {
-    margin: 40px;
-    justify-content: flex-end;
-    list-style: none;
+.nav-link {
+    text-decoration: none;
+       /* Remove o sublinhado */
+    color: white;
+       /* Cor do texto */
+    padding: 10px;
+       /* Espaçamento */
+    
+       /* Fundo escuro para melhor visualização */
+}
+
+.nav-link:hover {
+    background-color: #2f023a;
+    /* Cor de fundo ao passar o mouse */
 }
 
 
-.header-logo{
-    display: flex;
-    align-items: center;
-    margin: 50px;
-    width: 80px;
+.header-logo {
+    height: 50px;
+     /* Define a altura do logo */
+    width: auto;
+     /* Largura automática para manter proporções */
 }
 
 .main-form {
@@ -111,7 +125,7 @@ body, html {
 }
 
 .submitarq,
-button[type="submitarq"] {
+button[class="submit-arquivo"] {
     width: 15%;
     padding: 10px 0;
     margin-top: 10px;
@@ -132,7 +146,7 @@ button[type="submitarq"] {
 }
 
 /* Adicionando hover effects para o botão para feedback visual ao usuário */
-button[type="submitarq"]:hover {
+button[class="submit-arquivo"]:hover {
     background-color: #00e677;
 }
 
