@@ -6,10 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Solicitações de Aviso Prévio de Férias</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+            const dataDeInicio = document.getElementById("Data de início do gozo");
+
+            form.addEventListener("submit", function (event) {
+                const dataSelecionada = new Date(dataDeInicio.value + 'T00:00:00');
+                const diaDaSemana = dataSelecionada.getUTCDay();
+
+                if (diaDaSemana !== 1 && diaDaSemana !== 2 && diaDaSemana !== 3) {
+
+                    alert("Por favor, selecione uma data que seja segunda, terça ou quarta-feira.");
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
-            <img src="Logo_Treo_Moletom.png" alt="Logo da Empresa" class="header-logo">
+        <img src="Logo_Treo_Moletom.png" alt="Logo da Empresa" class="header-logo">
         <!-- Barra de navegação -->
         <nav
             <ul = class="navbar">
@@ -17,14 +34,12 @@
                 <li><a href="#acompanhamentos" class="nav-link">Aprovals</a></li>
                 <li><a href="#contatos" class="nav-link">Contacts</a></li>
             </ul>
-        </nav>
-    
-        
+        </nav>      
     <div class="center">
         <h5>Solicitação Aviso Prévio de Férias</h5>
     </div>
     <div class="main-form"> <!-- Início do div main-form -->
-        <form action="formulario.php" method="post" class="card-login">
+        <form action="config.php" method="post" class="card-login" enctype="multipart/form-data">
             <!-- Campos do formulário aqui -->
             <div class="textfield">
                 <label for="Selecione a Empresa">1. Selecione a Empresa:</label>
@@ -39,7 +54,7 @@
                 </div>
                 <div class="textfield">
                     <label for="Email Gestor">2. Email Gestor:</label>
-                    <select name="email" id="Email Gestor" required>
+                    <select name="Email Gestor" id="Email Gestor" required>
                         <option value="" disabled selected></option>
                         <option value="felipe.alexandrino@treo.com.br">felipe.alexandrino@treo.com.br</option>
                         <option value="renan.medeiros@treo.com.br">renan.medeiros@treo.com.br</option>
@@ -67,32 +82,24 @@
                     <input type="text" name="Dias de abono opcional" id="Dias de abono opcional">
                 </div>
                 <div class="textfield">
-                    <label for="Data do aviso opcional">7. Data do aviso opcional:</label>
-                    <input type="date" name="Data do aviso opcional" id="Data do aviso opcional">
-                </div>
-                <div class="textfield">
-                    <label for="Data do pagamento opcional">8. Data do pagamento opcional:</label>
-                    <input type="date" name="Data do pagamento opcional" id="Data do pagamento opcional">
-                </div>
-                <div class="textfield">
-                    <label for="Assunto">9. Assunto:</label>
+                    <label for="Assunto">7. Assunto:</label>
                     <input type="text" name="Assunto" id="Assunto" required>
                 </div>
                 <div class="textfield">
-                    <label for="mensagem">10. Descrição:</label>
+                    <label for="mensagem">8. Descrição:</label>
                     <textarea name="mensagem" id="mensagem" cols="50" rows="10" required></textarea>
                 </div>
                 <div class="textfield">
-                    <label for="Expectativa de Conclusão opcional">11. Expectativa de Conclusão opcional:</label>
-                    <input type="date" name="Expectativa de Conclusão  opcional" id="Expectativa de Conclusão  opcional" required>
+                    <label for="Expectativa de Conclusão opcional">9. Expectativa de Conclusão opcional:</label>
+                    <input type="date" name="Expectativa de Conclusão  opcional" id="Expectativa de Conclusão  opcional" >
                 </div>
                 <div class="textfield">
-                    <label for="Anexar Documento">12. Anexar Documento:</label>
-                    <input type="file" name="Anexar Documento" id="Anexar Documento" accept=".pdf, .xls, .xlsx" required>
+                    <label for="Anexar Documento">Anexar Documento:</label>
+                    <input type="file" name="Anexar Documento" id="Anexar Documento" accept=".pdf, .xls, .xlsx" >
                     <small>Tipos de arquivos aceitos: PDF, Excel (.xls, .xlsx).</small>
                 </div>
                 <div class="textfield">
-                    <button type="submitarq" class="submit">Enviar Arquivos</button>
+                    <button type="submit" name="submit-arquivo" class="submit-arquivo">Enviar Arquivos</button>
                 </div>
                 <div class="textfield">
                     <button type="submit" name="submit-form" class="submit">Enviar Formulário</button>  

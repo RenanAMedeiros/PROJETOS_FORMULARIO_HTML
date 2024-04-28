@@ -15,19 +15,83 @@
 
         th,
         td {
-            border: 1px solid #ddd;
+            border: 1px solid #464242;
+            color: #fff;
             padding: 8px;
             text-align: left;
         }
 
         th {
-            background-color: #f2f2f2;
+            background-color: #201b2c;
+            color: #fff;
+        }
+        body {
+            background-color: #201b2c;
+        }
+
+        h1 {
+    text-align: left; /* Alinha o texto do h1 à direita */
+    color: #77ffc0;
+}
+
+        .filter {
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .card-filter {
+            background-color: #2f2841;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 99%;
+            border-radius: 20px;
+            box-shadow: 0px 10px 40px #00000056;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            
+            
+        }
+
+        .filter > select {
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            background-color: #514869;
+            color: #f0ffffde;
+            
         }
     </style>
 </head>
 
 <body>
-    <h1>Tabela de Solicitações</h1>
+    <h1>Aprovações</h1>
+    <div class="card-filter">
+    <div class="filter">
+        <label for="Data de inicio do gozo">Data Solicitação:</label>
+        <input type="date" name="Data de início do gozo" id="Data de início do gozo" required>
+    </div>
+    <div class="filter">
+        <label for="Selecione a Empresa">Selecione a Empresa:</label>
+        <select name="Selecione a Empresa" id="Selecione a Empresa" required>
+            <option value="AUTOMAKERS">AUTOMAKERS</option>
+            <option value="CARS2YOU">CARS2YOU</option>
+            <option value="DEALERS CLUB">DEALERS CLUB</option>
+            <option value="HUBSGA MATRIZ">HUBSGA MATRIZ</option>
+            <option value="MAIS QUE CLIENTE">MAIS QUE CLIENTE</option>
+            <option value="WIN LEILOES - MATRIZ">WIN LEILOES - MATRIZ</option>
+        </select>
+        </div>
+    <div class="filter">
+        <label for="Selecione a Empresa">Status Solicitação:</label>
+        <select name="Selecione o Status" id="Selecione o Status" required>
+            <option value="" disabled selected></option>
+            <option value="Aprovado">Aprovado</option>
+            <option value="Recusado">Recusado</option>
+            <option value="Pendente">Pendente</option>
+        </select>
+    </div>
+    </div>
     <table>
         <thead>
             <tr>
@@ -42,24 +106,24 @@
         <tbody>
             <tr>
                 <td>1</td>
-                <td>Upgrade de Sistema</td>
-                <td>2024-04-20</td>
+                <td>Solicitação Aviso Prévio de Férias</td>
+                <td>20/04/2024</td>
                 <td>Renan Medeiros</td>
                 <td>Felipe Alexandrino</td>
                 <td>Aprovado</td>
             </tr>
             <tr>
                 <td>2</td>
-                <td>Instalação de Software</td>
-                <td>2024-04-21</td>
+                <td>Solicitação Aviso Prévio de Férias</td>
+                <td>21/04/2024</td>
                 <td>Renan Medeiros</td>
                 <td>Felipe Alexandrino</td>
                 <td>Recusado</td>
             </tr>
             <tr>
                 <td>3</td>
-                <td>Aprovação Orçamento</td>
-                <td>2024-04-21</td>
+                <td>Solicitação Aviso Prévio de Férias</td>
+                <td>21/04/2024</td>
                 <td>Felipe Alexandrino</td>
                 <td>Leonardo Queiroz</td>
                 <td>Pendente</td>
@@ -67,6 +131,35 @@
             <!-- Adicione mais linhas conforme necessário -->
         </tbody>
     </table>
-</body>
 
+    <script>
+        window.onload = function () {
+            const table = document.getElementById('approvalTable');
+            const dateSet = new Set();
+            const statusSet = new Set();
+
+            // Iterar através das linhas da tabela para extrair valores
+            Array.from(table.querySelectorAll('tbody tr')).forEach(row => {
+                const dateCell = row.cells[2].textContent;
+                const statusCell = row.cells[5].textContent;
+                dateSet.add(dateCell);
+                statusSet.add(statusCell);
+            });
+            // Função para popular select options
+            function populateSelect(selectId, data) {
+                const select = document.getElementById(selectId);
+                data.forEach(d => {
+                    const option = document.createElement('option');
+                    option.textContent = d;
+                    select.appendChild(option);
+                });
+            }
+            // Preencher os selects
+            populateSelect('dateFilter', dateSet);
+            populateSelect('statusFilter', statusSet);
+        }
+
+
+    </script>
+</body>
 </html>

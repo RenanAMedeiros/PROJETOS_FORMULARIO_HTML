@@ -1,22 +1,30 @@
 <?php
+include_once('conexao.php');
 
-// Caminho para o arquivo do banco de dados SQLite
-$dbPath = 'C:\PROJETOS_FORMULARIO_HTML\Solicitacoes_Dealers.db';
+// Recebendo dados do formulário
+$EMPRESA = $_POST['Selecione a Empresa'];
+$EMAIL_GESTOR = $_POST['Email Gestor'];
+$EMPREGADO = $_POST['Empregado'];
+$DT_IN_GOZO = $_POST['Data de início do gozo'];
+$DIAS_GOZO = $_POST['Dias de gozo'];
+$DIAS_ABONO = $_POST['Dias de abono opcional'];
+$DT_AVISO = $_POST['Data do aviso opcional'];
+$DT_PAGAMENTO = $_POST['Data do pagamento opcional'];
+$ASSUNTO = $_POST['Assunto'];
+$DESCRICAO = $_POST['mensagem'];
+$EXPECTATIVA = $_POST['Expectativa de Conclusão opcional'];
 
-// Conectando ao banco de dados SQLite
-$pdo.>exec('CREAT TABLE IF NOT EXISTS retorno_formulario (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            EMPRESA TEXT NOT NULL,
-            EMAIL_GESTOR TEXT NOT NULL,
-            EMPREGADO TEXT NOT NULL,
-            DT_IN_GOZO TEXT NOT NULL,
-            DIAS_GOZO TEXT NOT NULL,
-            DIAS_ABONO TEXT NOT NULL,
-            DT_AVISO TEXT NOT NULL,
-            DT_PAGAMENTO TEXT NOT NULL,
-            ASSUNTO TEXT NOT NULL,
-            DESCRICAO TEXT NOT NULL)');
+// Preparando a consulta SQL
+$stmt = $conn->prepare("INSERT INTO put_aviso_previo_ferias (Selecione a Empresa, Email Gestor, Empregado, Data de início do gozo, Dias de gozo, Dias de abono opcional, Data do aviso opcional, Data do pagamento opcional, Assunto, mensagem, Expectativa de Conclusão opcional) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("sssssssssss", $EMPRESA, $EMAIL_GESTOR, $EMPREGADO, $DT_IN_GOZO, $DIAS_GOZO, $DIAS_ABONO, $DT_AVISO, $DT_PAGAMENTO, $ASSUNTO, $DESCRICAO, $EXPECTATIVA);
 
-if(!$pdo->query('SELECT * FROM retorno_formulario')->fetch()){
-    $pdo->exec('INSERT INTO retorno_formulario (EMPRESA, EMAIL_GESTOR, EMPREGADO, DT_IN_GOZO, DIAS_GOZO, DIAS_ABONO, DT_AVISO, DT_PAGAMENTO, ASSUNTO, DESCRICAO) VALUES ("", "", "", "", "", "", "", "", "", "")');
+// Executando a consulta
+if ($stmt->execute()) {
+    echo "Registro inserido com sucesso!";
+} else {
+    echo "Erro ao inserir registro: " . $stmt->error;
 }
+
+$stmt->close();
+$conn->close();
+?>
